@@ -1,103 +1,169 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-*{margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Roboto";}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
 
-html,body{
+html,
+body {
     height: 100%;
 }
 
 :root {
     --maroon: #8e2323;
     --yellow: #ffff00;
-    --white: #FFF6F3;
-    --black-alpha:rgba(0,0,0,.5);
+    --white: #fff6f3;
+    --black-alpha: rgba(0, 0, 0, 0.5);
 }
-a{
+
+a {
     color: var(--maroon);
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     text-decoration: underline;
 }
-.container{
+
+.container {
     width: 80%;
     margin: auto;
 }
-header{
+
+header {
     position: fixed;
-    background-color: var(--black-alpha);
+    /* background-color: var(--black-alpha); */
     width: 100%;
     height: 125px;
     height: fit-content;
     padding: 25px 0;
     z-index: 1000;
 }
-.header-logo>img{
+
+.header-logo>img {
     width: 60px;
     margin-right: 10px;
 }
-header>.container{
+
+header>.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: var(--white);
 }
-header>.container>.header-logo{
+
+header>.container>.header-logo {
     display: flex;
     align-items: center;
 }
-header>.container>.nav>ul{
+
+header>.container>.nav>ul {
     list-style: none;
     display: flex;
 }
-header>.container>.nav>ul>li{
+
+header>.container>.nav>ul>li {
+    cursor: pointer;
     margin-left: 50px;
+    padding: 5px 0;
+    position: relative;
+    overflow-x: hidden;
 }
-header>.container>.nav>ul>li>a{
+
+header>.container>.nav>ul>li>a {
     text-decoration: none;
     color: var(--white);
 }
 
-.sticky{
+header>.container>.nav>ul>li::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to left,
+            #8e2323,
+            #be5120,
+            #e4860d,
+            #fac000,
+            #ffff00);
+    border-radius: 100px;
+    bottom: 0px;
+    left: -100%;
+}
+
+header>.container>.nav>ul>li:hover::before {
+    left: 0;
+    transition: 0.35s;
+}
+
+header>.container>.nav>ul>li::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right,
+            #8e2323,
+            #be5120,
+            #e4860d,
+            #fac000,
+            #ffff00);
+    border-radius: 100px;
+    top: 0px;
+    right: -100%;
+}
+
+header>.container>.nav>ul>li:hover::after {
+    right: 0;
+    transition: 0.35s;
+}
+
+.sticky {
     padding: 10px;
-background-color: rgba(0,0,0,.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
-.page{
-height: 100%;
+
+.page {
+    height: 100%;
 }
-#home{
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/scl_front.jpg");
+
+#home {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+        url("../img/scl_front.jpg");
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--white);
-
 }
-#home>.container{
+
+#home>.container {
     position: relative;
     height: 100%;
 }
-.home-content{
-    font-weight:100;
+
+.home-content {
+    font-weight: 100;
     text-align: center;
     /* background-color: antiquewhite; */
     width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-.home-content>h1>span{
+
+.home-content>h1>span {
     font-size: 3rem;
     font-weight: 500;
     font-family: "Merriweather";
 }
 
-.home-content>a>button{
+.home-content>a>button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -111,28 +177,37 @@ height: 100%;
     margin-top: 80px;
     border: none;
     border-radius: 100px;
-    background-image: linear-gradient(to right, #8e2323, #be5120, #e4860d, #fac000, #ffff00);
+    background-image: linear-gradient(to right,
+            #8e2323,
+            #be5120,
+            #e4860d,
+            #fac000,
+            #ffff00);
 }
 
-.section-title{
+.section-title {
     margin: 15px;
     color: var(--maroon);
 }
-.section{
+
+.section {
     height: fit-content;
     padding: 50px;
 }
-.home-content>a>button:hover{
-    transition: 1s;
+
+.home-content>a>button:hover {
+    transition: 0.5s;
     letter-spacing: 5px;
 }
-.card-section{
+
+.card-section {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     flex-wrap: wrap;
 }
-.card{
+
+.card {
     position: relative;
     border-radius: 16px;
     width: 200px;
@@ -140,19 +215,22 @@ height: 100%;
     margin: 10px;
     box-shadow: 1px 1px 2px;
 }
-.card>img{
+
+.card>img {
     border-radius: 16px 16px 0 0;
     width: 100%;
 }
-.card-content{
-    padding:4px;
+
+.card-content {
+    padding: 4px;
 }
-.card-content>button{
+
+.card-content>button {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: .9rem;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
     padding: 5px 0px;
     width: 80%;
     background-color: var(--maroon);
@@ -161,27 +239,60 @@ height: 100%;
     border: none;
     border-radius: 16px;
 }
-.card-content>button:active{
+
+.card-content>button:active {
     width: 79%;
 }
-.news-card{
+
+.news-card {
     cursor: pointer;
     position: relative;
     height: 200px;
     width: 300px;
     text-align: right;
 }
-.news-card:active{
-    transform: scale(.995);
+
+.news-card:active {
+    transform: scale(0.995);
 }
-.news-card>p{
+
+.news-card>p {
     text-align: right;
     position: absolute;
     color: var(--white);
     bottom: 0;
     padding: 5px 10px;
 }
-#news{
+
+#event-section {
+    position: relative;
+    padding: 0 200px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+}
+.event-data{
+    /* background-color: #be5120; */
+    width: 40%;
+    text-align: center;
+}
+.event-img-slider{
+    width: 50%;
+}
+.event-img-slider>img{
+width: 100%;
+height: 100%;
+border-radius: 16px;
+box-shadow: 1px 1px 2px rgba(0, 0, 0);
+}
+.event-data>div>h2{
+    margin-bottom: 20px;
+}
+
+#news {
     text-align: center;
     padding: 80px 0;
 }
