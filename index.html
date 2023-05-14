@@ -5,12 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" href="img/header-logo.png">
     <title>ASM | Ananda Sastralaya Mathugama</title>
 </head>
 
 <body>
+    <input type="checkbox" name="nav-res" id="nav-res">
     <header>
         <div class="container">
             <div class="header-logo">
@@ -19,6 +23,10 @@
             </div>
             <!-- header-logo -->
             <div class="nav">
+                <label for="nav-res">
+                    <i id="nav-open" class="fa-solid fa-bars"></i>
+                    <i id="nav-close" class="fa-solid fa-times"></i>
+                </label>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">News</a></li>
@@ -98,13 +106,20 @@
 
 
         <div class="section" style="background-color:var(--maroon); color: var(--white);">
-            <h1 class="section-title"><a href="" style="color: var(--maroon);color: var(--white);">Upcoming Events</a></h1>
+            <h1 class="section-title"><a href="" style="color: var(--maroon);color: var(--white);">Upcoming Events</a>
+            </h1>
             <div id="event-section">
 
                 <div class="event-data">
                     <div>
                         <h2>Lorem ipsum dolor sit amet.</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla sit dolores ea ab aspernatur, quos culpa consequuntur commodi! Expedita, consectetur iure nemo amet veritatis placeat ipsa cumque sed qui, quo non maiores minima labore ab est voluptatum corporis, dignissimos praesentium eaque? Voluptatum aliquam accusamus soluta, accusantium nisi velit nihil incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quam ea tenetur fugiat cumque error natus dicta laborum ab unde ullam ipsa doloremque consectetur nobis, quo eius repellendus, .</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla sit dolores ea ab aspernatur,
+                            quos culpa consequuntur commodi! Expedita, consectetur iure nemo amet veritatis placeat ipsa
+                            cumque sed qui, quo non maiores minima labore ab est voluptatum corporis, dignissimos
+                            praesentium eaque? Voluptatum aliquam accusamus soluta, accusantium nisi velit nihil
+                            incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quam ea tenetur
+                            fugiat cumque error natus dicta laborum ab unde ullam ipsa doloremque consectetur nobis, quo
+                            eius repellendus, .</p>
                     </div>
                 </div>
                 <!-- event-data -->
@@ -157,12 +172,6 @@
 
     </div>
     <!-- #news -->
-
-
-    <div id="media">
-
-    </div>
-
 
 </body>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js'
