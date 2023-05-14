@@ -357,6 +357,11 @@ header > .container > .nav > ul > li:hover::after {
   width: 400px;
   margin: 0 20px;
 }
+@media screen and (max-width:980px) {
+    .event-data{
+        text-align: center;
+    }
+}
 .event-img-slider {
   width: 400px;
   margin: 0 20px;
